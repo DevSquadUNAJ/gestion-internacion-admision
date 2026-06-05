@@ -1,0 +1,6 @@
+@Admision.API_HostAddress = http://localhost:5209
+
+GET {{Admision.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

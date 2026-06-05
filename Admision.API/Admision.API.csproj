@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BaseMicroservicio.Aplicacion\BaseMicroservicio.Aplicacion.csproj" />
-    <ProjectReference Include="..\BaseMicroservicio.Infraestructura\BaseMicroservicio.Infraestructura.csproj" />
+    <ProjectReference Include="..\Admision.Aplicacion\Admision.Aplicacion.csproj" />
+    <ProjectReference Include="..\Admision.Infraestructura\Admision.Infraestructura.csproj" />
   </ItemGroup>
 
 </Project>
