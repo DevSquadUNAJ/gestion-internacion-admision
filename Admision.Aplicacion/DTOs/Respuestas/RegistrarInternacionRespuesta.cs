@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Admision.Dominio.Constantes;
+using System;
 
 namespace Admision.Aplicacion.DTOs.Respuestas
 {
@@ -7,7 +8,7 @@ namespace Admision.Aplicacion.DTOs.Respuestas
         public Guid InternacionId { get; set; }
         public Guid PacienteId { get; set; }
         public DateTime FechaIngreso { get; set; }
-        public string Estado { get; set; } = string.Empty;
+        public EstadoInternacion Estado { get; set; } = EstadoInternacion.Activa;
         public Guid? CamaAsignadaId { get; set; }
         public bool TieneCamaAsignada => CamaAsignadaId.HasValue;
     }
