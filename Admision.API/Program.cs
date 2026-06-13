@@ -20,7 +20,7 @@ builder.Services.AgregarDependenciasDeAplicacion();
 
 // JWT
 var configuracionJwt = builder.Configuration.GetSection("Jwt");
-var claveSecreta = Encoding.UTF8.GetBytes(configuracionJwt["ClaveSecreta"]!);
+var claveSecreta = Encoding.UTF8.GetBytes(configuracionJwt["Key"]!);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(opciones =>
