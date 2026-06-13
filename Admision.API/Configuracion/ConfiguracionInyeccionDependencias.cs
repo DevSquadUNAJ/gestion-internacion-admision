@@ -33,7 +33,7 @@ namespace Admision.API.Configuracion
         public static IServiceCollection AgregarPersistencia(this IServiceCollection servicios, IConfiguration configuracion)
         {
             servicios.AddDbContext<ContextoBaseDeDatos>(opciones =>
-                opciones.UseSqlServer(configuracion.GetConnectionString("ConexionSqlServer")));
+                opciones.UseSqlServer(configuracion.GetConnectionString("AdmisionDb")));
 
             return servicios;
         }
