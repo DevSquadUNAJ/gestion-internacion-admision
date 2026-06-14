@@ -31,8 +31,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = configuracionJwt["Emisor"],
-            ValidAudience = configuracionJwt["Audiencia"],
+            ValidIssuer = configuracionJwt["Issuer"],
+            ValidAudience = configuracionJwt["Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(claveSecreta)
         };
     });
@@ -51,7 +51,7 @@ builder.Services.AddSwaggerGen(opciones =>
         Scheme = "bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Ingrese el token JWT con el formato: Bearer {token}"
+        Description = "Pega tu token JWT directamente aquí. (Nota: NO escribas la palabra 'Bearer', Swagger lo agregará por ti automáticamente)."
     });
 
     opciones.AddSecurityRequirement(new OpenApiSecurityRequirement
