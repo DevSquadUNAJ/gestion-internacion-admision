@@ -41,6 +41,8 @@ namespace Admision.API.Middlewares
                 CamaNoEncontradaException => (HttpStatusCode.NotFound, "CamaNoEncontrada"),
                 PacienteYaInternadoException => (HttpStatusCode.Conflict, "PacienteYaInternado"),
                 CamaNoDisponibleException => (HttpStatusCode.Conflict, "CamaNoDisponible"),
+                CambioEstadoCamaNoPermitidoException => (HttpStatusCode.Conflict, "CambioEstadoCamaNoPermitido"),
+                EstadoCamaInvalidoException => (HttpStatusCode.BadRequest, "EstadoCamaInvalido"),
                 ExcepcionDeNegocio => (HttpStatusCode.BadRequest, "ErrorDeNegocio"),
                 _ => (HttpStatusCode.InternalServerError, "ErrorInterno")
             };
