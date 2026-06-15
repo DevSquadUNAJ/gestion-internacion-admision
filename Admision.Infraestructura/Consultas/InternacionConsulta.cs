@@ -1,9 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Admision.Aplicacion.Interfaces.IConsultas;
+﻿using Admision.Aplicacion.Interfaces.IConsultas;
 using Admision.Dominio.Constantes;
+using Admision.Dominio.Entidades;
 using Admision.Infraestructura.Persistencia;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Threading.Tasks;
 
 namespace Admision.Infraestructura.Consultas
 {
@@ -22,6 +23,20 @@ namespace Admision.Infraestructura.Consultas
                 .AsNoTracking()
                 .AnyAsync(i => i.PacienteId == pacienteId
                             && i.Estado == EstadoInternacion.Activa);
+        }
+
+        public async Task<Internacion?> ObtenerPorIdAsync(Guid internacionId)
+        {
+            return await _contexto.Internaciones
+                .AsNoTracking()
+                .FirstOrDefaultAsync(i => i.Id == internacionId);
+        }
+
+        public async Task<InternacionCama?> ObtenerAsignacionActualAsync(Guid internacionId)
+        {
+            return await _contexto.InternacionesCamas
+                .FirstOrDefaultAsync(ic => ic.InternacionId == internacionId
+                                        && ic.EsActual);
         }
     }
 }
