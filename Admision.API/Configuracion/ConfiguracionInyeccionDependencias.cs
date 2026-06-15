@@ -17,6 +17,8 @@ namespace Admision.API.Configuracion
         {
             // Casos de uso
             servicios.AddScoped<IRegistrarInternacionCasoDeUso, RegistrarInternacionCasoDeUso>();
+            servicios.AddScoped<ICambiarEstadoCamaCasoDeUso, CambiarEstadoCamaCasoDeUso>();
+            servicios.AddScoped<ITrasladarPacienteInternadoCasoDeUso, TrasladarPacienteInternadoCasoDeUso>();
 
             // Consultas
             servicios.AddScoped<IPacienteConsulta, PacienteConsulta>();

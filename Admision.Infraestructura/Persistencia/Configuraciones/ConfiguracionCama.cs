@@ -16,7 +16,8 @@ namespace Admision.Infraestructura.Persistencia.Configuraciones
 
             builder.Property(c => c.Estado)
                 .IsRequired()
-                .HasMaxLength(50);
+                .HasMaxLength(50)
+                .HasConversion<string>();
 
             builder.HasOne(c => c.Sector)
                 .WithMany(s => s.Camas)

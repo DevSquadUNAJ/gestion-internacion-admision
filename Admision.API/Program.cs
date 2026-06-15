@@ -11,7 +11,12 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // ---------- Servicios ----------
-builder.Services.AddControllers();
+builder.Services.AddControllers() // Convierte los enums a string en las respuestas JSON
+    .AddJsonOptions(opciones =>
+    {
+        opciones.JsonSerializerOptions.Converters.Add(
+            new System.Text.Json.Serialization.JsonStringEnumConverter());
+    });
 builder.Services.AddEndpointsApiExplorer();
 
 // Persistencia y dependencias del microservicio

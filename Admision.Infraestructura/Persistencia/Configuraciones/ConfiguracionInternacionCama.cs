@@ -21,6 +21,10 @@ namespace Admision.Infraestructura.Persistencia.Configuraciones
                 .IsRequired()
                 .HasDefaultValue(true);
 
+            builder.Property(ic => ic.MotivoTraslado)
+                .IsRequired(false)
+                .HasMaxLength(500);
+
             builder.HasOne(ic => ic.Internacion)
                 .WithMany(i => i.HistorialCamas)
                 .HasForeignKey(ic => ic.InternacionId)

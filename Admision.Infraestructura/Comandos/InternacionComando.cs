@@ -24,6 +24,11 @@ namespace Admision.Infraestructura.Comandos
             await _contexto.InternacionesCamas.AddAsync(internacionCama);
         }
 
+        public void ActualizarInternacionCama(InternacionCama internacionCama)
+        {
+            _contexto.InternacionesCamas.Update(internacionCama);
+        }
+
         public async Task GuardarCambiosAsync()
         {
             await _contexto.SaveChangesAsync();
