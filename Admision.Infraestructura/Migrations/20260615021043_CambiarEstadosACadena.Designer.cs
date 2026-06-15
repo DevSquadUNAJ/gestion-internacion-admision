@@ -4,6 +4,7 @@ using Admision.Infraestructura.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Admision.Infraestructura.Migrations
 {
     [DbContext(typeof(ContextoBaseDeDatos))]
-    partial class ContextoBaseDeDatosModelSnapshot : ModelSnapshot
+    [Migration("20260615021043_CambiarEstadosACadena")]
+    partial class CambiarEstadosACadena
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

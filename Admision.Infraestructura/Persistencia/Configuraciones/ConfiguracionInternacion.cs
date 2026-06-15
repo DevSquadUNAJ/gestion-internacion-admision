@@ -17,7 +17,8 @@ namespace Admision.Infraestructura.Persistencia.Configuraciones
 
             builder.Property(i => i.Estado)
                 .IsRequired()
-                .HasMaxLength(50);
+                .HasMaxLength(50)
+                .HasConversion<string>();
 
             builder.Property(i => i.FechaIngreso)
                 .IsRequired();
