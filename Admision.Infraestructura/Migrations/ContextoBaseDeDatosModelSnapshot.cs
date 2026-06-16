@@ -44,6 +44,29 @@ namespace Admision.Infraestructura.Migrations
                     b.HasIndex("SectorId");
 
                     b.ToTable("Camas", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("33333333-cccc-cccc-cccc-333333333333"),
+                            Estado = "Ocupada",
+                            Numero = 101,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-dddd-dddd-dddd-444444444444"),
+                            Estado = "Ocupada",
+                            Numero = 201,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("55555555-eeee-eeee-eeee-555555555555"),
+                            Estado = "Disponible",
+                            Numero = 102,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        });
                 });
 
             modelBuilder.Entity("Admision.Dominio.Entidades.Internacion", b =>
@@ -76,6 +99,24 @@ namespace Admision.Infraestructura.Migrations
                     b.HasIndex("PacienteId");
 
                     b.ToTable("Internaciones", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("66666666-ffff-ffff-ffff-666666666666"),
+                            Estado = "Activa",
+                            FechaIngreso = new DateTime(2026, 6, 15, 8, 0, 0, 0, DateTimeKind.Utc),
+                            Motivo = "Ingreso por guardia con cuadro respiratorio agudo.",
+                            PacienteId = new Guid("11111111-aaaa-aaaa-aaaa-111111111111")
+                        },
+                        new
+                        {
+                            Id = new Guid("77777777-1111-1111-1111-777777777777"),
+                            Estado = "Activa",
+                            FechaIngreso = new DateTime(2026, 6, 16, 10, 0, 0, 0, DateTimeKind.Utc),
+                            Motivo = "Control evolutivo post-cirugía.",
+                            PacienteId = new Guid("22222222-bbbb-bbbb-bbbb-222222222222")
+                        });
                 });
 
             modelBuilder.Entity("Admision.Dominio.Entidades.InternacionCama", b =>
@@ -112,6 +153,24 @@ namespace Admision.Infraestructura.Migrations
                     b.HasIndex("InternacionId");
 
                     b.ToTable("InternacionesCamas", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("88888888-2222-2222-2222-888888888888"),
+                            CamaId = new Guid("33333333-cccc-cccc-cccc-333333333333"),
+                            EsActual = true,
+                            FechaIngresoCama = new DateTime(2026, 6, 15, 8, 30, 0, 0, DateTimeKind.Utc),
+                            InternacionId = new Guid("66666666-ffff-ffff-ffff-666666666666")
+                        },
+                        new
+                        {
+                            Id = new Guid("99999999-3333-3333-3333-999999999999"),
+                            CamaId = new Guid("44444444-dddd-dddd-dddd-444444444444"),
+                            EsActual = true,
+                            FechaIngresoCama = new DateTime(2026, 6, 16, 10, 30, 0, 0, DateTimeKind.Utc),
+                            InternacionId = new Guid("77777777-1111-1111-1111-777777777777")
+                        });
                 });
 
             modelBuilder.Entity("Admision.Dominio.Entidades.Paciente", b =>
@@ -149,6 +208,26 @@ namespace Admision.Infraestructura.Migrations
                         .IsUnique();
 
                     b.ToTable("Pacientes", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("11111111-aaaa-aaaa-aaaa-111111111111"),
+                            Dni = "25444333",
+                            FechaNacimiento = new DateTime(1980, 5, 12, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Carlos Mendoza",
+                            Sexo = "Masculino",
+                            Telefono = "11-4444-5555"
+                        },
+                        new
+                        {
+                            Id = new Guid("22222222-bbbb-bbbb-bbbb-222222222222"),
+                            Dni = "30111222",
+                            FechaNacimiento = new DateTime(1992, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Luciana Gómez",
+                            Sexo = "Femenino",
+                            Telefono = "11-2222-3333"
+                        });
                 });
 
             modelBuilder.Entity("Admision.Dominio.Entidades.Sector", b =>
@@ -168,6 +247,20 @@ namespace Admision.Infraestructura.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sectores", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("99999999-9999-9999-9999-999999999999"),
+                            Nombre = "Terapia Intensiva (UTI)",
+                            Piso = 2
+                        },
+                        new
+                        {
+                            Id = new Guid("88888888-8888-8888-8888-888888888888"),
+                            Nombre = "Guardia Clínica",
+                            Piso = 1
+                        });
                 });
 
             modelBuilder.Entity("Admision.Dominio.Entidades.Cama", b =>

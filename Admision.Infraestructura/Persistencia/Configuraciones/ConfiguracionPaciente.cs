@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Admision.Dominio.Entidades;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Admision.Dominio.Entidades;
+using System;
 
 namespace Admision.Infraestructura.Persistencia.Configuraciones
 {
@@ -26,6 +27,27 @@ namespace Admision.Infraestructura.Persistencia.Configuraciones
 
             builder.Property(p => p.Telefono)
                 .HasMaxLength(30);
+
+            builder.HasData(
+                new Paciente
+                {
+                    Id = Guid.Parse("11111111-aaaa-aaaa-aaaa-111111111111"), // Coincide con HC 1 en Clínico
+                    Nombre = "Carlos Mendoza",
+                    Dni = "25444333",
+                    FechaNacimiento = new DateTime(1980, 5, 12, 0, 0, 0, DateTimeKind.Utc),
+                    Sexo = "Masculino",
+                    Telefono = "11-4444-5555"
+                },
+                new Paciente
+                {
+                    Id = Guid.Parse("22222222-bbbb-bbbb-bbbb-222222222222"), // Coincide con HC 2 en Clínico
+                    Nombre = "Luciana Gómez",
+                    Dni = "30111222",
+                    FechaNacimiento = new DateTime(1992, 10, 25, 0, 0, 0, DateTimeKind.Utc),
+                    Sexo = "Femenino",
+                    Telefono = "11-2222-3333"
+                }
+            );
         }
     }
 }
