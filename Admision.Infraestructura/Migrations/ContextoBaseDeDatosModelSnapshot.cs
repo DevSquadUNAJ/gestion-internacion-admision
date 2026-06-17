@@ -66,6 +66,13 @@ namespace Admision.Infraestructura.Migrations
                             Estado = "Disponible",
                             Numero = 102,
                             SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("66666666-aaaa-aaaa-aaaa-666666666666"),
+                            Estado = "Disponible",
+                            Numero = 202,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
                         });
                 });
 
@@ -227,6 +234,15 @@ namespace Admision.Infraestructura.Migrations
                             Nombre = "Luciana Gómez",
                             Sexo = "Femenino",
                             Telefono = "11-2222-3333"
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
+                            Dni = "12345678",
+                            FechaNacimiento = new DateTime(1960, 2, 10, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Roberto Sánchez",
+                            Sexo = "Masculino",
+                            Telefono = "11-9999-8888"
                         });
                 });
 

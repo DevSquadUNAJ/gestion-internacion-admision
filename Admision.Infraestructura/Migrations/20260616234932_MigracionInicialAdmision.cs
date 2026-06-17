@@ -119,7 +119,8 @@ namespace Admision.Infraestructura.Migrations
                 values: new object[,]
                 {
                     { new Guid("11111111-aaaa-aaaa-aaaa-111111111111"), "25444333", new DateTime(1980, 5, 12, 0, 0, 0, 0, DateTimeKind.Utc), "Carlos Mendoza", "Masculino", "11-4444-5555" },
-                    { new Guid("22222222-bbbb-bbbb-bbbb-222222222222"), "30111222", new DateTime(1992, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc), "Luciana Gómez", "Femenino", "11-2222-3333" }
+                    { new Guid("22222222-bbbb-bbbb-bbbb-222222222222"), "30111222", new DateTime(1992, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc), "Luciana Gómez", "Femenino", "11-2222-3333" },
+                    { new Guid("33333333-3333-3333-3333-333333333333"), "12345678", new DateTime(1960, 2, 10, 0, 0, 0, 0, DateTimeKind.Utc), "Roberto Sánchez", "Masculino", "11-9999-8888" }
                 });
 
             migrationBuilder.InsertData(
@@ -138,7 +139,8 @@ namespace Admision.Infraestructura.Migrations
                 {
                     { new Guid("33333333-cccc-cccc-cccc-333333333333"), "Ocupada", 101, new Guid("99999999-9999-9999-9999-999999999999") },
                     { new Guid("44444444-dddd-dddd-dddd-444444444444"), "Ocupada", 201, new Guid("88888888-8888-8888-8888-888888888888") },
-                    { new Guid("55555555-eeee-eeee-eeee-555555555555"), "Disponible", 102, new Guid("99999999-9999-9999-9999-999999999999") }
+                    { new Guid("55555555-eeee-eeee-eeee-555555555555"), "Disponible", 102, new Guid("99999999-9999-9999-9999-999999999999") },
+                    { new Guid("66666666-aaaa-aaaa-aaaa-666666666666"), "Disponible", 202, new Guid("88888888-8888-8888-8888-888888888888") }
                 });
 
             migrationBuilder.InsertData(

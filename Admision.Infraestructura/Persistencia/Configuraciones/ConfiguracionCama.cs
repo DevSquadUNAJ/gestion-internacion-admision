@@ -47,6 +47,13 @@ namespace Admision.Infraestructura.Persistencia.Configuraciones
                     SectorId = Guid.Parse("99999999-9999-9999-9999-999999999999"), // UTI
                     Numero = 102,
                     Estado = EstadoCama.Disponible
+                },
+                new Cama
+                {
+                    Id = Guid.Parse("66666666-aaaa-aaaa-aaaa-666666666666"), // Nueva cama libre
+                    SectorId = Guid.Parse("88888888-8888-8888-8888-888888888888"), // Guardia
+                    Numero = 202,
+                    Estado = EstadoCama.Disponible
                 }
             );
         }

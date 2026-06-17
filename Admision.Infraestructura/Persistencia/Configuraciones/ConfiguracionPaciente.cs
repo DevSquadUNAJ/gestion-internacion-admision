@@ -46,6 +46,15 @@ namespace Admision.Infraestructura.Persistencia.Configuraciones
                     FechaNacimiento = new DateTime(1992, 10, 25, 0, 0, 0, DateTimeKind.Utc),
                     Sexo = "Femenino",
                     Telefono = "11-2222-3333"
+                },
+                new Paciente
+                {
+                    Id = Guid.Parse("33333333-3333-3333-3333-333333333333"), // Nuevo Paciente Sano
+                    Nombre = "Roberto Sánchez",
+                    Dni = "12345678",
+                    FechaNacimiento = new DateTime(1960, 2, 10, 0, 0, 0, DateTimeKind.Utc),
+                    Sexo = "Masculino",
+                    Telefono = "11-9999-8888"
                 }
             );
         }
