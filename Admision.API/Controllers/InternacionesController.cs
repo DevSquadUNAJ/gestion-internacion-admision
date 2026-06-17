@@ -38,15 +38,16 @@ namespace Admision.API.Controllers
             return CreatedAtAction(nameof(Registrar), new { id = respuesta.InternacionId }, respuesta);
         }
 
-        [HttpPatch("{id}/trasladar")]
+        [HttpPatch("{internacionId}/trasladar")]
         [ProducesResponseType(typeof(TrasladarPacienteInternadoRespuesta), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public async Task<IActionResult> Trasladar(Guid id, [FromBody] TrasladarPacienteInternadoSolicitud solicitud)
+        public async Task<IActionResult> Trasladar(Guid internacionId, [FromBody] TrasladarPacienteInternadoSolicitud solicitud)
         {
-            solicitud.InternacionId = id;
+            solicitud.InternacionId = internacionId;
             var respuesta = await _trasladarPacienteInternadoCasoDeUso.EjecutarAsync(solicitud);
             return Ok(respuesta);
         }

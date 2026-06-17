@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Admision.Dominio.Entidades;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Admision.Dominio.Entidades;
+using System;
 
 namespace Admision.Infraestructura.Persistencia.Configuraciones
 {
@@ -17,6 +18,21 @@ namespace Admision.Infraestructura.Persistencia.Configuraciones
 
             builder.Property(s => s.Piso)
                 .IsRequired();
+
+            builder.HasData(
+                new Sector
+                {
+                    Id = Guid.Parse("99999999-9999-9999-9999-999999999999"), // Coincide con Enfermeros en Clínico
+                    Nombre = "Terapia Intensiva (UTI)",
+                    Piso = 2
+                },
+                new Sector
+                {
+                    Id = Guid.Parse("88888888-8888-8888-8888-888888888888"),
+                    Nombre = "Guardia Clínica",
+                    Piso = 1
+                }
+            );
         }
     }
 }

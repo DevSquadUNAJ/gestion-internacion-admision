@@ -19,6 +19,9 @@ builder.Services.AddControllers() // Convierte los enums a string en las respues
     });
 builder.Services.AddEndpointsApiExplorer();
 
+// Forzar que todas las URLs generadas y expuestas en Swagger sean en minúsculas
+builder.Services.AddRouting(opciones => opciones.LowercaseUrls = true);
+
 // Persistencia y dependencias del microservicio
 builder.Services.AgregarPersistencia(builder.Configuration);
 builder.Services.AgregarDependenciasDeAplicacion();

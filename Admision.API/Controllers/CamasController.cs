@@ -21,14 +21,16 @@ namespace Admision.API.Controllers
             _cambiarEstadoCamaCasoDeUso = cambiarEstadoCamaCasoDeUso;
         }
 
-        [HttpPatch("{id}/estado")]
+        [HttpPatch("{camaId}/estado")]
         [ProducesResponseType(typeof(CambiarEstadoCamaRespuesta), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public async Task<IActionResult> CambiarEstado(Guid id, [FromBody] CambiarEstadoCamaSolicitud solicitud)
+        public async Task<IActionResult> CambiarEstado(Guid camaId, [FromBody] CambiarEstadoCamaSolicitud solicitud)
         {
-            solicitud.CamaId = id;
+            solicitud.CamaId = camaId;
             var respuesta = await _cambiarEstadoCamaCasoDeUso.EjecutarAsync(solicitud);
             return Ok(respuesta);
         }

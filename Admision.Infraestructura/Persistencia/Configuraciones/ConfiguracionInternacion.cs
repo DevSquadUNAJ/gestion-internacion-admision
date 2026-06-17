@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Admision.Dominio.Constantes;
 using Admision.Dominio.Entidades;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 
 namespace Admision.Infraestructura.Persistencia.Configuraciones
 {
@@ -30,6 +32,25 @@ namespace Admision.Infraestructura.Persistencia.Configuraciones
                 .WithMany(p => p.Internaciones)
                 .HasForeignKey(i => i.PacienteId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasData(
+                new Internacion
+                {
+                    Id = Guid.Parse("66666666-ffff-ffff-ffff-666666666666"),
+                    PacienteId = Guid.Parse("11111111-aaaa-aaaa-aaaa-111111111111"), // Carlos
+                    FechaIngreso = new DateTime(2026, 6, 15, 8, 0, 0, DateTimeKind.Utc),
+                    Motivo = "Ingreso por guardia con cuadro respiratorio agudo.",
+                    Estado = EstadoInternacion.Activa
+                },
+                new Internacion
+                {
+                    Id = Guid.Parse("77777777-1111-1111-1111-777777777777"),
+                    PacienteId = Guid.Parse("22222222-bbbb-bbbb-bbbb-222222222222"), // Luciana
+                    FechaIngreso = new DateTime(2026, 6, 16, 10, 0, 0, DateTimeKind.Utc),
+                    Motivo = "Control evolutivo post-cirugía.",
+                    Estado = EstadoInternacion.Activa
+                }
+            );
         }
     }
 }
