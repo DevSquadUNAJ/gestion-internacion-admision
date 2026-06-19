@@ -35,6 +35,9 @@ namespace Admision.API.Configuracion
             servicios.AddScoped<ICamaComando, CamaComando>();
 
             // Mapeadores
+            servicios.AddSingleton<IRegistrarInternacionMapeador, RegistrarInternacionMapeador>();
+            servicios.AddSingleton<ICambiarEstadoCamaMapeador, CambiarEstadoCamaMapeador>();
+            servicios.AddSingleton<ITrasladarPacienteInternadoMapeador, TrasladarPacienteInternadoMapeador>();
             servicios.AddSingleton<ISectorMapeador, SectorMapeador>();
             servicios.AddSingleton<ICamaMapeador, CamaMapeador>();
 
