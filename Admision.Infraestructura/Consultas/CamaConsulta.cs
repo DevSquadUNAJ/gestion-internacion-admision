@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Admision.Aplicacion.Interfaces.IConsultas;
@@ -20,6 +22,17 @@ namespace Admision.Infraestructura.Consultas
         {
             return await _contexto.Camas
                 .FirstOrDefaultAsync(c => c.Id == camaId);
+        }
+
+        public async Task<IEnumerable<Cama>> ObtenerCamasPorSectorConPacienteAsync(Guid sectorId)
+        {
+            return await _contexto.Camas
+                .Include(c => c.HistorialInternaciones.Where(hi => hi.EsActual))
+                    .ThenInclude(hi => hi.Internacion)
+                        .ThenInclude(i => i.Paciente)
+                .Where(c => c.SectorId == sectorId)
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }
