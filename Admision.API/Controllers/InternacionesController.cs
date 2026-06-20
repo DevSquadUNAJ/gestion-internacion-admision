@@ -17,15 +17,18 @@ namespace Admision.API.Controllers
         private readonly IRegistrarInternacionCasoDeUso _registrarInternacionCasoDeUso;
         private readonly ITrasladarPacienteInternadoCasoDeUso _trasladarPacienteInternadoCasoDeUso;
         private readonly IObtenerContextoInternacionCasoDeUso _obtenerContextoInternacionCasoDeUso;
+        private readonly IProcesarAltaInternacionCasoDeUso _procesarAltaInternacionCasoDeUso;
 
         public InternacionesController(
             IRegistrarInternacionCasoDeUso registrarInternacionCasoDeUso,
             ITrasladarPacienteInternadoCasoDeUso trasladarPacienteInternadoCasoDeUso,
-            IObtenerContextoInternacionCasoDeUso obtenerContextoInternacionCasoDeUso)
+            IObtenerContextoInternacionCasoDeUso obtenerContextoInternacionCasoDeUso,
+            IProcesarAltaInternacionCasoDeUso procesarAltaInternacionCasoDeUso)
         {
             _registrarInternacionCasoDeUso = registrarInternacionCasoDeUso;
             _trasladarPacienteInternadoCasoDeUso = trasladarPacienteInternadoCasoDeUso;
             _obtenerContextoInternacionCasoDeUso = obtenerContextoInternacionCasoDeUso;
+            _procesarAltaInternacionCasoDeUso = procesarAltaInternacionCasoDeUso;
         }
 
         [HttpPost]
@@ -54,6 +57,21 @@ namespace Admision.API.Controllers
         {
             solicitud.InternacionId = internacionId;
             var respuesta = await _trasladarPacienteInternadoCasoDeUso.EjecutarAsync(solicitud);
+            return Ok(respuesta);
+        }
+
+        [HttpPatch("{internacionId}/alta")]
+        [Authorize(Roles = "Admision,Medico")]
+        [ProducesResponseType(typeof(ProcesarAltaInternacionRespuesta), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        public async Task<IActionResult> ProcesarAlta(Guid internacionId, [FromBody] ProcesarAltaInternacionSolicitud solicitud)
+        {
+            solicitud.InternacionId = internacionId;
+            var respuesta = await _procesarAltaInternacionCasoDeUso.EjecutarAsync(solicitud);
             return Ok(respuesta);
         }
 

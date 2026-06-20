@@ -47,6 +47,7 @@ namespace Admision.API.Middlewares
                 InternacionSinCamaAsignadaException => (HttpStatusCode.Conflict, "InternacionSinCamaAsignada"),
                 TrasladoAMismaCamaException => (HttpStatusCode.Conflict, "TrasladoAMismaCama"),
                 EstadoCamaInvalidoException => (HttpStatusCode.BadRequest, "EstadoCamaInvalido"),
+                EstadoEgresoInvalidoException => (HttpStatusCode.BadRequest, "EstadoEgresoInvalido"),
                 ExcepcionDeNegocio => (HttpStatusCode.BadRequest, "ErrorDeNegocio"),
                 _ => (HttpStatusCode.InternalServerError, "ErrorInterno")
             };

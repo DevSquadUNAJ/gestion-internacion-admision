@@ -8,6 +8,7 @@ namespace Admision.Aplicacion.Interfaces.IComandos
         Task AgregarAsync(Internacion internacion);
         Task AgregarInternacionCamaAsync(InternacionCama internacionCama);
         void ActualizarInternacionCama(InternacionCama internacionCama);
+        void Actualizar(Internacion internacion);
         Task GuardarCambiosAsync();
     }
 }

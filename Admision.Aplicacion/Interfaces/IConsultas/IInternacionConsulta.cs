@@ -8,6 +8,7 @@ namespace Admision.Aplicacion.Interfaces.IConsultas
     {
         Task<bool> TieneInternacionActivaAsync(Guid pacienteId);
         Task<Internacion?> ObtenerPorIdAsync(Guid internacionId);
+        Task<Internacion?> ObtenerPorIdParaActualizarAsync(Guid internacionId);
         Task<InternacionCama?> ObtenerAsignacionActualAsync(Guid internacionId);
         Task<Internacion?> ObtenerConContextoCompletoAsync(Guid internacionId);
     }
