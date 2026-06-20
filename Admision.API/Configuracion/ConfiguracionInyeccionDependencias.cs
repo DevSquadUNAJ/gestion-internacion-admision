@@ -24,6 +24,7 @@ namespace Admision.API.Configuracion
             servicios.AddScoped<IObtenerSectoresCasoDeUso, ObtenerSectoresCasoDeUso>();
             servicios.AddScoped<IObtenerCamasPorSectorCasoDeUso, ObtenerCamasPorSectorCasoDeUso>();
             servicios.AddScoped<IObtenerContextoInternacionCasoDeUso, ObtenerContextoInternacionCasoDeUso>();
+            servicios.AddScoped<IProcesarAltaInternacionCasoDeUso, ProcesarAltaInternacionCasoDeUso>();
 
             // Consultas
             servicios.AddScoped<IPacienteConsulta, PacienteConsulta>();
@@ -42,6 +43,7 @@ namespace Admision.API.Configuracion
             servicios.AddSingleton<ISectorMapeador, SectorMapeador>();
             servicios.AddSingleton<ICamaMapeador, CamaMapeador>();
             servicios.AddSingleton<IContextoInternacionMapeador, ContextoInternacionMapeador>();
+            servicios.AddSingleton<IProcesarAltaInternacionMapeador, ProcesarAltaInternacionMapeador>();
 
             return servicios;
         }

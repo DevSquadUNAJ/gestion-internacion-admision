@@ -40,6 +40,12 @@ namespace Admision.Infraestructura.Consultas
                                         && ic.EsActual);
         }
 
+        public async Task<Internacion?> ObtenerPorIdParaActualizarAsync(Guid internacionId)
+        {
+            return await _contexto.Internaciones
+                .FirstOrDefaultAsync(i => i.Id == internacionId);
+        }
+
         public async Task<Internacion?> ObtenerConContextoCompletoAsync(Guid internacionId)
         {
             return await _contexto.Internaciones
