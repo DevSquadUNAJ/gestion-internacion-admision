@@ -78,6 +78,19 @@ builder.Services.AddSwaggerGen(opciones =>
     });
 });
 
+// ==========================================
+// SEGURIDAD: CORS (Cross-Origin Resource Sharing)
+// ==========================================
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // ---------- Pipeline ----------
@@ -90,6 +103,7 @@ if (app.Environment.IsDevelopment())
 app.UsarManejadorGlobalDeExcepciones();
 
 app.UseHttpsRedirection();
+app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
