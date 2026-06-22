@@ -18,7 +18,8 @@ namespace Admision.Aplicacion.Mapeadores
                     CamaId = c.Id,
                     Numero = c.Numero,
                     Estado = c.Estado,
-                    PacienteAsignado = internacionActual?.Paciente?.Nombre
+                    PacienteAsignado = internacionActual?.Paciente?.Nombre,
+                    InternacionId = internacionActual?.Id
                 };
             }).OrderBy(c => c.Numero);
         }
