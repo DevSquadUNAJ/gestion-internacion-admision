@@ -9,5 +9,6 @@ namespace Admision.Aplicacion.DTOs.Respuestas
         public int Numero { get; set; }
         public EstadoCama Estado { get; set; }
         public string? PacienteAsignado { get; set; }
+        public Guid? InternacionId { get; set; }
     }
 }
