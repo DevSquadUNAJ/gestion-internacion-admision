@@ -45,7 +45,7 @@ namespace Admision.API.Controllers
             return CreatedAtAction(nameof(Registrar), new { id = respuesta.InternacionId }, respuesta);
         }
 
-        [HttpPatch("{internacionId}/trasladar")]
+        [HttpPatch("{internacionId}")]
         [Authorize(Roles = "Admision")]
         [ProducesResponseType(typeof(TrasladarPacienteInternadoRespuesta), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

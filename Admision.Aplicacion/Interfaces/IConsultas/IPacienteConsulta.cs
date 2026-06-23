@@ -7,5 +7,6 @@ namespace Admision.Aplicacion.Interfaces.IConsultas
     public interface IPacienteConsulta
     {
         Task<Paciente?> ObtenerPorIdAsync(Guid pacienteId);
+        Task<Paciente?> ObtenerPorDniAsync(string dni);
     }
 }

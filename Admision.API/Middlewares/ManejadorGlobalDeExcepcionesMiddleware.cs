@@ -59,8 +59,8 @@ namespace Admision.API.Middlewares
 
             var respuesta = new
             {
-                tipo = tipoError,
-                mensaje = codigoHttp == HttpStatusCode.InternalServerError
+                title = tipoError,
+                detail = codigoHttp == HttpStatusCode.InternalServerError
                     ? "Ocurrio un error interno en el servidor."
                     : excepcion.Message
             };

@@ -25,6 +25,7 @@ namespace Admision.API.Configuracion
             servicios.AddScoped<IObtenerCamasPorSectorCasoDeUso, ObtenerCamasPorSectorCasoDeUso>();
             servicios.AddScoped<IObtenerContextoInternacionCasoDeUso, ObtenerContextoInternacionCasoDeUso>();
             servicios.AddScoped<IProcesarAltaInternacionCasoDeUso, ProcesarAltaInternacionCasoDeUso>();
+            servicios.AddScoped<IBuscarPacientePorDniCasoDeUso, BuscarPacientePorDniCasoDeUso>();
 
             // Consultas
             servicios.AddScoped<IPacienteConsulta, PacienteConsulta>();
