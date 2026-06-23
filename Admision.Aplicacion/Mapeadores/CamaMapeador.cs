@@ -18,6 +18,7 @@ namespace Admision.Aplicacion.Mapeadores
                     CamaId = c.Id,
                     Numero = c.Numero,
                     Estado = c.Estado,
+                    PacienteId = internacionActual?.Paciente?.Id,
                     PacienteAsignado = internacionActual?.Paciente?.Nombre,
                     InternacionId = internacionActual?.Id
                 };
