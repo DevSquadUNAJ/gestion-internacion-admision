@@ -22,5 +22,12 @@ namespace Admision.Infraestructura.Consultas
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.Id == pacienteId);
         }
+
+        public async Task<Paciente?> ObtenerPorDniAsync(string dni)
+        {
+            return await _contexto.Pacientes
+                .AsNoTracking()
+                .FirstOrDefaultAsync(p => p.Dni == dni);
+        }
     }
 }
