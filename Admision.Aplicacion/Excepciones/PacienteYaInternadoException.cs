@@ -4,7 +4,7 @@ namespace Admision.Aplicacion.Excepciones
 {
     public class PacienteYaInternadoException : ExcepcionDeNegocio
     {
-        public PacienteYaInternadoException(Guid pacienteId)
-            : base($"El paciente con Id {pacienteId} ya posee una internación activa.") { }
+        public PacienteYaInternadoException(string pacienteDni)
+            : base($"El paciente con DNI {pacienteDni} ya posee una internación activa.") { }
     }
 }

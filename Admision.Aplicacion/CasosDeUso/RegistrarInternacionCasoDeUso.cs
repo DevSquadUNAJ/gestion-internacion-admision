@@ -45,7 +45,7 @@ namespace Admision.Aplicacion.CasosDeUso
 
             var yaInternado = await _internacionConsulta.TieneInternacionActivaAsync(solicitud.PacienteId);
             if (yaInternado)
-                throw new PacienteYaInternadoException(solicitud.PacienteId);
+                throw new PacienteYaInternadoException(paciente.Dni);
 
             Cama? camaAsignada = null;
             if (solicitud.CamaId.HasValue)

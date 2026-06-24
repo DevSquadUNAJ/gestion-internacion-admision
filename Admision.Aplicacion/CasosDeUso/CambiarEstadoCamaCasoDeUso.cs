@@ -51,7 +51,7 @@ namespace Admision.Aplicacion.CasosDeUso
                 throw new CambioEstadoCamaNoPermitidoException(cama.Estado, nuevoEstado);
 
             if (cama.Estado == nuevoEstado)
-                throw new CambioEstadoCamaNoPermitidoException(cama.Estado, nuevoEstado);
+                throw new CambioEstadoCamaNoPermitidoException(cama.Estado);
 
             var estadoAnterior = cama.Estado;
             var fechaCambio = DateTime.UtcNow;
