@@ -50,28 +50,140 @@ namespace Admision.Infraestructura.Migrations
                         {
                             Id = new Guid("33333333-cccc-cccc-cccc-333333333333"),
                             Estado = "Ocupada",
-                            Numero = 101,
+                            Numero = 201,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("55555555-eeee-eeee-eeee-555555555555"),
+                            Estado = "Disponible",
+                            Numero = 202,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-0203-cccc-cccc-333333333333"),
+                            Estado = "Disponible",
+                            Numero = 203,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-0204-cccc-cccc-333333333333"),
+                            Estado = "Disponible",
+                            Numero = 204,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-0205-cccc-cccc-333333333333"),
+                            Estado = "Disponible",
+                            Numero = 205,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-0206-cccc-cccc-333333333333"),
+                            Estado = "Disponible",
+                            Numero = 206,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-0207-cccc-cccc-333333333333"),
+                            Estado = "Disponible",
+                            Numero = 207,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-0208-cccc-cccc-333333333333"),
+                            Estado = "Disponible",
+                            Numero = 208,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-0209-cccc-cccc-333333333333"),
+                            Estado = "Disponible",
+                            Numero = 209,
+                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-0210-cccc-cccc-333333333333"),
+                            Estado = "Disponible",
+                            Numero = 210,
                             SectorId = new Guid("99999999-9999-9999-9999-999999999999")
                         },
                         new
                         {
                             Id = new Guid("44444444-dddd-dddd-dddd-444444444444"),
                             Estado = "Ocupada",
-                            Numero = 201,
+                            Numero = 101,
                             SectorId = new Guid("88888888-8888-8888-8888-888888888888")
-                        },
-                        new
-                        {
-                            Id = new Guid("55555555-eeee-eeee-eeee-555555555555"),
-                            Estado = "Disponible",
-                            Numero = 102,
-                            SectorId = new Guid("99999999-9999-9999-9999-999999999999")
                         },
                         new
                         {
                             Id = new Guid("66666666-aaaa-aaaa-aaaa-666666666666"),
                             Estado = "Disponible",
-                            Numero = 202,
+                            Numero = 102,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-0103-dddd-dddd-444444444444"),
+                            Estado = "Disponible",
+                            Numero = 103,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-0104-dddd-dddd-444444444444"),
+                            Estado = "Disponible",
+                            Numero = 104,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-0105-dddd-dddd-444444444444"),
+                            Estado = "Disponible",
+                            Numero = 105,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-0106-dddd-dddd-444444444444"),
+                            Estado = "Disponible",
+                            Numero = 106,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-0107-dddd-dddd-444444444444"),
+                            Estado = "Disponible",
+                            Numero = 107,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-0108-dddd-dddd-444444444444"),
+                            Estado = "Disponible",
+                            Numero = 108,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-0109-dddd-dddd-444444444444"),
+                            Estado = "Disponible",
+                            Numero = 109,
+                            SectorId = new Guid("88888888-8888-8888-8888-888888888888")
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-0110-dddd-dddd-444444444444"),
+                            Estado = "Disponible",
+                            Numero = 110,
                             SectorId = new Guid("88888888-8888-8888-8888-888888888888")
                         });
                 });
@@ -220,8 +332,8 @@ namespace Admision.Infraestructura.Migrations
                         new
                         {
                             Id = new Guid("11111111-aaaa-aaaa-aaaa-111111111111"),
-                            Dni = "25444333",
-                            FechaNacimiento = new DateTime(1980, 5, 12, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Dni = "21123456",
+                            FechaNacimiento = new DateTime(1971, 5, 12, 0, 0, 0, 0, DateTimeKind.Utc),
                             Nombre = "Carlos Mendoza",
                             Sexo = "Masculino",
                             Telefono = "11-4444-5555"
@@ -229,20 +341,83 @@ namespace Admision.Infraestructura.Migrations
                         new
                         {
                             Id = new Guid("22222222-bbbb-bbbb-bbbb-222222222222"),
-                            Dni = "30111222",
-                            FechaNacimiento = new DateTime(1992, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Dni = "22123456",
+                            FechaNacimiento = new DateTime(1972, 10, 25, 0, 0, 0, 0, DateTimeKind.Utc),
                             Nombre = "Luciana Gómez",
                             Sexo = "Femenino",
                             Telefono = "11-2222-3333"
                         },
                         new
                         {
-                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            Dni = "12345678",
-                            FechaNacimiento = new DateTime(1960, 2, 10, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Id = new Guid("33333333-2373-cccc-cccc-333333333333"),
+                            Dni = "23123456",
+                            FechaNacimiento = new DateTime(1973, 2, 10, 0, 0, 0, 0, DateTimeKind.Utc),
                             Nombre = "Roberto Sánchez",
                             Sexo = "Masculino",
                             Telefono = "11-9999-8888"
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-2474-dddd-dddd-444444444444"),
+                            Dni = "24123456",
+                            FechaNacimiento = new DateTime(1974, 8, 15, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "María Fernández",
+                            Sexo = "Femenino",
+                            Telefono = "11-7777-6666"
+                        },
+                        new
+                        {
+                            Id = new Guid("55555555-2575-eeee-eeee-555555555555"),
+                            Dni = "25123456",
+                            FechaNacimiento = new DateTime(1975, 11, 20, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Javier Rodríguez",
+                            Sexo = "Masculino",
+                            Telefono = "11-5555-4444"
+                        },
+                        new
+                        {
+                            Id = new Guid("66666666-2676-ffff-ffff-666666666666"),
+                            Dni = "26123456",
+                            FechaNacimiento = new DateTime(1976, 4, 5, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Silvana López",
+                            Sexo = "Femenino",
+                            Telefono = "11-3333-2222"
+                        },
+                        new
+                        {
+                            Id = new Guid("77777777-2777-aaaa-aaaa-777777777777"),
+                            Dni = "27123456",
+                            FechaNacimiento = new DateTime(1977, 1, 30, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Diego Martínez",
+                            Sexo = "Masculino",
+                            Telefono = "11-1111-0000"
+                        },
+                        new
+                        {
+                            Id = new Guid("88888888-2878-bbbb-bbbb-888888888888"),
+                            Dni = "28123456",
+                            FechaNacimiento = new DateTime(1978, 9, 18, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Valeria Torres",
+                            Sexo = "Femenino",
+                            Telefono = "11-0000-1111"
+                        },
+                        new
+                        {
+                            Id = new Guid("99999999-2979-cccc-cccc-999999999999"),
+                            Dni = "29123456",
+                            FechaNacimiento = new DateTime(1979, 7, 7, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Gustavo Romero",
+                            Sexo = "Masculino",
+                            Telefono = "11-2222-1111"
+                        },
+                        new
+                        {
+                            Id = new Guid("10101010-3080-dddd-dddd-101010101010"),
+                            Dni = "30123456",
+                            FechaNacimiento = new DateTime(1980, 12, 12, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Nombre = "Natalia Silva",
+                            Sexo = "Femenino",
+                            Telefono = "11-3333-5555"
                         });
                 });
 
