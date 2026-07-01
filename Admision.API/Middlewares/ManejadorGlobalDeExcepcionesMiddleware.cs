@@ -38,6 +38,7 @@ namespace Admision.API.Middlewares
             var (codigoHttp, tipoError) = excepcion switch
             {
                 PacienteNoEncontradoException => (HttpStatusCode.NotFound, "PacienteNoEncontrado"),
+                DniInvalidoException => (HttpStatusCode.BadRequest, "DniInvalido"),
                 CamaNoEncontradaException => (HttpStatusCode.NotFound, "CamaNoEncontrada"),
                 InternacionNoEncontradaException => (HttpStatusCode.NotFound, "InternacionNoEncontrada"),
                 PacienteYaInternadoException => (HttpStatusCode.Conflict, "PacienteYaInternado"),
