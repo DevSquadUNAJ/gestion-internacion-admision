@@ -1,9 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Admision.Aplicacion.Interfaces.IConsultas;
+﻿using Admision.Aplicacion.Interfaces.IConsultas;
+using Admision.Dominio.Constantes;
 using Admision.Dominio.Entidades;
 using Admision.Infraestructura.Persistencia;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Admision.Infraestructura.Consultas
 {
@@ -26,6 +28,7 @@ namespace Admision.Infraestructura.Consultas
         public async Task<Paciente?> ObtenerPorDniAsync(string dni)
         {
             return await _contexto.Pacientes
+                .Include(p => p.Internaciones.Where(i => i.Estado == EstadoInternacion.Activa))
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.Dni == dni);
         }

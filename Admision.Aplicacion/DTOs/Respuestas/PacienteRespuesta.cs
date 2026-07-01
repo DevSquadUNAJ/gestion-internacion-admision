@@ -7,5 +7,6 @@ namespace Admision.Aplicacion.DTOs.Respuestas
         public Guid PacienteId { get; set; }
         public string Nombre { get; set; } = string.Empty;
         public string Dni { get; set; } = string.Empty;
+        public bool EstaInternado { get; set; }
     }
 }

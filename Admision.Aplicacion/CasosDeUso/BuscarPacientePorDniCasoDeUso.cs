@@ -1,8 +1,9 @@
-﻿using System.Threading.Tasks;
-using Admision.Aplicacion.DTOs.Respuestas;
+﻿using Admision.Aplicacion.DTOs.Respuestas;
 using Admision.Aplicacion.Excepciones;
 using Admision.Aplicacion.Interfaces.ICasosDeUso;
 using Admision.Aplicacion.Interfaces.IConsultas;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Admision.Aplicacion.CasosDeUso
 {
@@ -29,7 +30,8 @@ namespace Admision.Aplicacion.CasosDeUso
             {
                 PacienteId = paciente.Id,
                 Nombre = paciente.Nombre,
-                Dni = paciente.Dni
+                Dni = paciente.Dni,
+                EstaInternado = paciente.Internaciones.Any()
             };
         }
     }
